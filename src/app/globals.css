@@ -57,6 +57,9 @@
 
 :root {
   --radius: 0.625rem;
+  --font-display-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono-code: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   /* The Memory of the Universe — dark cosmic, gold memory */
   --background: #0a0514;
   --foreground: #efe9f7;

@@ -1,26 +1,6 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-
-const displaySerif = Cormorant_Garamond({
-  variable: "--font-display-serif",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const bodySans = Manrope({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const monoCode = JetBrains_Mono({
-  variable: "--font-mono-code",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -59,9 +39,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${displaySerif.variable} ${bodySans.variable} ${monoCode.variable} antialiased bg-background text-foreground grain`}
-      >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased bg-background text-foreground grain">
         {children}
         <Toaster />
       </body>
